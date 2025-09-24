@@ -1,0 +1,545 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+
+<%@ Register Src="~/UHeader.ascx" TagPrefix="uc1" TagName="UHeader" %>
+<%@ Register Src="~/UFooter.ascx" TagPrefix="uc1" TagName="UFooter" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <base href="/"/>
+    <meta charset="UTF-8"/>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="keywords" content="" />
+    <meta name="description" content="Welcome To Department of International Qualifications, your gateway to a future brimming with career possibilities." />
+    <meta name="google-site-verification" content="Dt_pfxuwamkIOEkXPNlLkl3182F2KE5N9iS6HKlg_aE" />
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="~/assets/css/meanmenu.css"/>
+    <link rel="stylesheet" href="~/assets/css/owl.carousel.min.css"/>
+    <link rel="stylesheet" href="~/assets/css/owl.theme.default.min.css"/>
+    <link rel="stylesheet" href="~/assets/css/magnific-popup.css"/>
+    <link rel="stylesheet" href="~/assets/css/flaticon.css"/>
+    <link rel="stylesheet" href="~/assets/css/remixicon.css"/>
+    <link rel="stylesheet" href="~/assets/css/odometer.min.css"/>
+    <link rel="stylesheet" href="~/assets/css/aos.css"/>
+    <link rel="stylesheet" href="~/assets/css/style.css"/>
+    <link rel="stylesheet" href="~/assets/css/dark.css"/>
+    <link rel="stylesheet" href="~/assets/css/responsive.css"/>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png"/>
+    <link rel="canonical" href="https://iq.uol.edu.pk"/>
+    <title>IQ | Department of International Qualifications</title>
+
+</head>
+<body>
+
+
+<div class="navbar-area nav-bg-2">
+    <uc1:UHeader runat="server" ID="UHeader" />
+</div>
+
+
+    <div class="banner-area pb-100">
+    <div class="container-fluid">
+    <div class="hero-slider owl-carousel owl-theme" data-slider-id="1">
+        <div class="slider-item" style="background-image: url(assets/images/banner/banner-img15.jpg)">
+            <div class="slider-content">
+                
+            </div>
+        </div>
+
+        <div class="slider-item" style="background-image: url(assets/images/banner/banner-img12.jpg)">
+            <div class="slider-content">
+                
+            </div>
+        </div>
+        <div class="slider-item" style="background-image: url(assets/images/banner/banner-img13.jpg)">
+            <div class="slider-content">
+                
+            </div>
+        </div>
+        
+        
+        <div class="slider-item" style="background-image: url(assets/images/banner/banner-img16.jpg)">
+            <div class="slider-content">
+                
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="owl-thumbs" data-slider-id="1">
+        <%--<button class="owl-thumb-item">
+            <img src="assets/images/banner/thumb-6.jpg" alt="Images"/>
+        </button>
+        <button class="owl-thumb-item">
+            <img src="assets/images/banner/thumb-7.jpg" alt="Images"/>
+        </button>
+        <button class="owl-thumb-item">
+            <img src="assets/images/banner/thumb-8.jpg" alt="Images"/>
+        </button>
+        <button class="owl-thumb-item">
+            <img src="assets/images/banner/thumb-9.jpg" alt="Images"/>
+        </button>
+        <button class="owl-thumb-item">
+            <img src="assets/images/banner/thumb-10.jpg" alt="Images"/>
+        </button>--%>
+    </div>
+    </div>
+    </div>
+
+    <div class="campus-information-area pt-100 pb-70 bg-f4f6f9">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7" data-aos="fade-right" data-aos-easing="ease-in-sine" data-aos-duration="1300" data-aos-once="true">
+                    <div class="campus-content pr-20">
+                        <div class="campus-title">
+                            <h2>Introduction</h2>
+                            <p>
+                                Welcome to the Department of International Qualifications, your gateway to a future brimming with career possibilities. In a rapidly evolving global job market, securing a fulfilling career path can be a daunting endeavour. However, our internationally acclaimed degree programs are designed to transform that challenge into a seamless transition. We understand the significance of not just obtaining a degree but also securing a promising future. 
+                            </p>
+                        </div>
+                        <div class="list">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12">
+                                    <ul>
+                                        <li>
+                                            <i class="ri-check-fill"></i>
+                                            <p><a href="<%=ResolveUrl("vision-and-mission") %>">Vision Statement</a></p>
+                                        </li>
+                                        <li>
+                                            <i class="ri-check-fill"></i>
+                                            <p><a href="<%=ResolveUrl("vision-and-mission") %>">Mission Statement</a></p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5" data-aos="fade-up" data-aos-easing="ease-in-sine" data-aos-duration="1300" data-aos-once="true">
+                    <div class="campus-image pl-20">
+                        <img src="assets/images/campus-information/campus-1.jpg" alt="Image"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="events-area ptb-100">
+        <div class="container">
+            <div class="section-title">
+                <h2>News & Events</h2>
+                <p> </p>
+            </div>
+            <div class="row justify-content">
+                <asp:Repeater ID="Repeater1" runat="server">
+                    <ItemTemplate>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-events-card style-4">
+                                <div class="events-image">
+                                    <a href="<%# Page.GetRouteUrl("NewsDetails", new {newsid = Eval("newsid")}) %>"><img src="images/news/title/<%# Eval("newsimage1")%>" alt="Image"/></a>
+                                    <div class="date">
+                                        <span><%#Eval("newsdate", "{0:dd}")%></span>
+                                        <p><%#Eval("newsdate", "{0:MMM}")%></p>
+                                    </div>
+                                </div>
+                                <div class="events-content">
+                                    <div class="admin">
+                                
+                                    </div>
+                                    <a href="<%# Page.GetRouteUrl("NewsDetails", new {newsid = Eval("newsid")}) %>"><h3> <%# Eval("newstitle")%></h3></a>
+                                </div>
+                            </div>
+                        </div>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </div>
+            <div class="more-health-care text-center">
+                <p><a href="<%=ResolveUrl("news-and-events") %>" class="read-more-btn active">View All<i class="flaticon-next"></i></a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="admisssion-area ptb-100 admission-bg" style="background-image:url(assets/images/admission/why-diq.jpg)">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 col-md-8">
+                    <div class="admission-left-content">
+                        <h2>Why IQ</h2>
+                        <p>
+                            International Qualifications are frequently recognized and appreciated around the world.  International education exposes you to a variety of cultures, languages, and thought processes. This can help you extend your horizons and build a more global perspective, both of which are becoming increasingly vital in our interconnected world. Many businesses value foreign qualifications because they reflect a desire to venture outside of your comfort zone, adapt to new surroundings, and interact with individuals from varied backgrounds. You can establish a global network of contacts by studying International Qualifications. 
+                        </p>
+                        <a href="<%=ResolveUrl("why-iq") %>" class="default-btn btn">More on why IQ<i class="flaticon-next"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+
+                </div>
+            </div>
+        </div>
+    </div>
+      
+
+<div class="courses-area ptb-100">
+<div class="container">
+<div class="section-title">
+<h2>Study at IQ</h2>
+<p></p>
+</div>
+    <div class="row justify-content-center">
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200" data-aos-once="true">
+        <div class="single-courses-card">
+            <div class="courses-img">
+                <a href="<%=ResolveUrl("hnd-business") %>"><img src="assets/images/courses/courses-5.jpg" alt="Image"/></a>
+            </div>
+            <div class="courses-content">
+                <a href="<%=ResolveUrl("hnd-business") %>" target="_blank"><h3>HND Business</h3></a>
+                <p>
+                    The BTEC Higher National qualifications in Business are aimed at students wanting to continue their education through applied learning. HND Business in Pearson provide ...
+                </p>
+                <div class="bottom-content">
+                    <ul class="d-flex justify-content-between">
+                        <li>
+                            <ul>
+                                <li><i class="flaticon-graduation"></i>2 Years</li>
+                                <li><i class="flaticon-bubble-chat"></i>Semester 4</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <br />
+                    <a href="https://uol.edu.pk/admissions/" class="default-btn btn" target="_blank">Apply Now <i class="flaticon-next"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200" data-aos-once="true">
+    <div class="single-courses-card">
+    <div class="courses-img">
+        <a href="<%=ResolveUrl("hnd-computing") %>"><img src="assets/images/courses/courses-6.jpg" alt="Image"/></a>
+    </div>
+    <div class="courses-content">
+        <a href="<%=ResolveUrl("hnd-computing") %>"><h3>HND Computing</h3></a>
+        <p>
+            The BTEC Higher National qualifications in Computing are aimed at students wanting to continue their education through applied learning. Higher Nationals provide a ...
+        </p>
+    <div class="bottom-content">
+        <ul class="d-flex justify-content-between">
+        <li>
+        <ul>
+        <li><i class="flaticon-graduation"></i>2 Years</li>
+        <li><i class="flaticon-bubble-chat"></i>Semester 4</li>
+        </ul>
+        </li>
+        </ul>
+        <br />
+        <a href="https://uol.edu.pk/admissions/" class="default-btn btn" target="_blank">Apply Now <i class="flaticon-next"></i></a>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200" data-aos-once="true">
+        <div class="single-courses-card">
+            <div class="courses-img">
+                <a href="<%=ResolveUrl("hnd-art-and-design") %>"><img src="assets/images/courses/courses-7.jpg" alt="Image"/></a>
+            </div>
+            <div class="courses-content">
+                <a href="<%=ResolveUrl("hnd-art-and-design") %>"><h3>HND Art and Design</h3></a>
+                <p>
+                    The HND Art and Design in Pearson University aims to continue their education through applied learning. Higher Nationals provide a wide-ranging study of the Art and Design ...
+                </p>
+                <div class="bottom-content">
+                    <ul class="d-flex justify-content-between">
+                        <li>
+                            <ul>
+                                <li><i class="flaticon-graduation"></i>2 Years</li>
+                                <li><i class="flaticon-bubble-chat"></i>Semester 5</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <br />
+                    <a href="https://uol.edu.pk/admissions/" class="default-btn btn" target="_blank">Apply Now <i class="flaticon-next"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+<div class="row justify-content-center">
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200" data-aos-once="true">
+        <div class="single-courses-card">
+            <div class="courses-img">
+                <a href="https://lbs.uol.edu.pk/course/hospitality-management/" target="_blank"><img src="assets/images/courses/courses-2.jpg" alt="Image"/></a>
+            </div>
+            <div class="courses-content">
+                <a href="https://lbs.uol.edu.pk/course/hospitality-management/" target="_blank"><h3>Hospitality Management</h3></a>
+                <p>
+                    The University of Lahore, IQ Department, offers this course with the
+                    approval of BTEC Edexcel. The Pearson BTEC Level 5 Higher National
+                    Diploma in Hospitality Management provides ...
+                </p>
+                <div class="bottom-content">
+                    <ul class="d-flex justify-content-between">
+                        <li>
+                            <ul>
+                                <li><i class="flaticon-graduation"></i>2 Years</li>
+                                <li><i class="flaticon-bubble-chat"></i>Level 4 & 5</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <br />
+                    <a href="https://uol.edu.pk/admissions/" class="default-btn btn" target="_blank">Apply Now <i class="flaticon-next"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200" data-aos-once="true">
+    <div class="single-courses-card">
+    <div class="courses-img">
+        <a href="https://pbh.uol.edu.pk/course/health-social-care/" target="_blank"><img src="assets/images/courses/courses-1.jpg" alt="Image"/></a>
+    </div>
+    <div class="courses-content">
+        <a href="https://pbh.uol.edu.pk/course/health-social-care/" target="_blank"><h3>Health & Social Care</h3></a>
+        <p>
+            Health and Social Care is designed to provide students with a comprehensive
+            understanding of the healthcare industry and the broader social and ethical
+            issues related to healthcare...
+        </p>
+    <div class="bottom-content">
+    <ul class="d-flex justify-content-between">
+    <li>
+    <ul>
+    <li><i class="flaticon-graduation"></i>2 Years</li>
+    <li><i class="flaticon-bubble-chat"></i>Level 4 & 5</li>
+    </ul>
+    </li>
+    </ul>
+        <br />
+                    <a href="https://uol.edu.pk/admissions/" class="default-btn btn" target="_blank">Apply Now <i class="flaticon-next"></i></a>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200" data-aos-once="true">
+        <div class="single-courses-card">
+            <div class="courses-img">
+                <a href="https://pbh.uol.edu.pk/course/social-community-work/" target="_blank"><img src="assets/images/courses/courses-3.jpg" alt="Image"/></a>
+            </div>
+            <div class="courses-content">
+                <a href="https://pbh.uol.edu.pk/course/social-community-work/" target="_blank"><h3>Social & Community Work</h3></a>
+                <p>
+                    BTEC is one of the world’s most recognised applied learning brands, engaging
+                    students in practical, interpersonal and thinking skills, for more than thirty
+                    years. 
+                </p>
+                <div class="bottom-content">
+                    <ul class="d-flex justify-content-between">
+                        <li>
+                            <ul>
+                                <li><i class="flaticon-graduation"></i>2 Years</li>
+                                <li><i class="flaticon-bubble-chat"></i>Level 4 & 5</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <br />
+                    <a href="https://uol.edu.pk/admissions/" class="default-btn btn" target="_blank">Apply Now <i class="flaticon-next"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+</div>
+</div>
+
+    <div class="banner-area1">
+        <div>
+            <div style="position: relative; background-size: cover; background-position: center center; background-repeat: no-repeat; padding-top: 100px; padding-bottom: 100px; padding-left: 60px; overflow: hidden; background-image: url(assets/images/banner/banner-hnd.jpg); ">
+                <div class="container-fluid">
+                    <div class="slider-content style2">
+                        <h1>What is HND</h1>
+                        <p>Higher National Diploma (HND) Course is a vocational, work-related course provided by colleges and universities in the United Kingdom, and accredited by Pearson Edexcel. They are level 5 qualifications in a wide range of sectors, such as business, hospitality, healthcare etc.</p>
+                        <a href="<%=ResolveUrl("what-is-hnd") %>" class="default-btn btn">More on HND <i class="flaticon-next"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="campus-life-area pt-100 pb-70">
+        <div class="container">
+            <div class="section-title">
+                <h2>Student Life</h2>
+                <h5>A Vibrant and Inclusive Learning Community</h5>
+                <p style="text-align:justify;">
+                    At the UOL (Department of International Qualifications), we believe that learning extends far beyond the classroom. Our vibrant and inclusive student life is designed to enrich your educational journey, foster personal growth, and provide you with a global perspective that goes beyond textbooks. Here, you'll discover a supportive community where lifelong friendships are formed, and memories are made.
+                </p>
+            </div>
+            <br />
+            <div class="row justify-content-center">
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-campus-card">
+                        <div class="img">
+                            <a href="#"><img src="assets/images/student-life/student-life-1.jpg" alt="Image"></a>
+                        </div>
+                        <div class="campus-content">
+                            <a href="#"><h3>Diverse Student Body</h3></a>
+                            <p>
+                                One of the hallmarks of our department is the diverse student body that calls it home.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-campus-card">
+                        <div class="img">
+                            <a href="#"><img src="assets/images/student-life/student-life-2.jpg" alt="Image"></a>
+                        </div>
+                        <div class="campus-content">
+                            <a href="#">
+                                <h3>
+                                    Student Societies
+                                </h3>
+                                <p>
+                                    Joining a student Societies is a fantastic way to explore your interests, develop leadership ...
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-campus-card">
+                        <div class="img">
+                            <a href="#"><img src="assets/images/student-life/student-life-3.jpg" alt="Image"></a>
+                        </div>
+                        <div class="campus-content">
+                            <a href="#"><h3>Cultural Exchange</h3></a>
+                            <p>
+                                Immerse yourself in a world of cultural exchange. We celebrate diversity through cultural ...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-campus-card">
+                        <div class="img">
+                            <a href="#"><img src="assets/images/student-life/student-life-4.jpg" alt="Image"></a>
+                        </div>
+                        <div class="campus-content">
+                            <a href="#"><h3>Support Services</h3></a>
+                            <p>
+                                Your well-being is our priority. We offer a range of support services, including academic ...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-campus-card">
+                        <div class="img">
+                            <a href="#"><img src="assets/images/student-life/student-life-5.jpg" alt="Image"></a>
+                        </div>
+                        <div class="campus-content">
+                            <a href="#">
+                                <h3>
+                                    Campus Facilities
+                                </h3>
+                                <p>Our state-of-the-art campus facilities are designed to enhance your learning experience. </p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-campus-card">
+                        <div class="img">
+                            <a href="#"><img src="assets/images/student-life/student-life-6.jpg" alt="Image"></a>
+                        </div>
+                        <div class="campus-content">
+                            <a href="#"><h3>Social & Recreational Activities</h3></a>
+                            <p>
+                                Balance is key to a fulfilling student life. Join in on social and recreational activities ...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-campus-card">
+                        <div class="img">
+                            <a href="#"><img src="assets/images/student-life/student-life-7.jpg" alt="Image"></a>
+                        </div>
+                        <div class="campus-content">
+                            <a href="#"><h3>Career Development</h3></a>
+                            <p>
+                                We understand that your ultimate goal is to embark on a successful career.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-campus-card">
+                        <div class="img">
+                            <a href="#"><img src="assets/images/student-life/student-life-8.jpg" alt="Image"></a>
+                        </div>
+                        <div class="campus-content">
+                            <a href="#"><h3>Alumni Network</h3></a>
+                            <p>
+                                Become part of a global network of alumni who have gone on to achieve great success ...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" >
+                    <div class="single-campus-card">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%--<div class="admisssion-area ptb-100 admission-bg">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 col-md-8">
+                    <div class="admission-left-content">
+                        <h2>Get Your Global Passport</h2>
+                        <p>At the UOL (Department of International Qualifications), we believe that education is your passport to the world. With Pearson Degree Level 4 & 5 programs, you can embark on a transformative journey that opens doors to global opportunities, enriches your life, and prepares you for a future without boundaries.</p>
+                        <a href="<%=ResolveUrl("get-your-global-passport") %>" class="default-btn btn">More on global passport<i class="flaticon-next"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+
+                </div>
+            </div>
+        </div>
+    </div>--%>
+    <div class="campus-information-area pt-100 pb-70 bg-f4f6f9">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7" data-aos="fade-right" data-aos-easing="ease-in-sine" data-aos-duration="1300" data-aos-once="true">
+                    <div class="campus-content pr-20">
+                        <div class="campus-title">
+                            <h2>Get Your Global Passport</h2>
+                            <p>
+                                At the UOL (Department of International Qualifications), we believe that education is your passport to the world. With Pearson Degree Level 4 & 5 programs, you can embark on a transformative journey that opens doors to global opportunities, enriches your life, and prepares you for a future without boundaries.
+                            </p>
+                            <a href="<%=ResolveUrl("get-your-global-passport") %>" class="default-btn btn">More on global passport<i class="flaticon-next"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5" data-aos="fade-up" data-aos-easing="ease-in-sine" data-aos-duration="1300" data-aos-once="true">
+                    <div class="campus-image pl-20">
+                        <img src="assets/images/admission/passport.png" alt="Image"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<!--footer-area start-->
+    <uc1:UFooter runat="server" ID="UFooter" />
+</body>
+</html>
